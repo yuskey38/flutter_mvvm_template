@@ -3,8 +3,9 @@ import 'package:flutter_mvvm_template/view_models/article_list_view_model.dart';
 import 'package:flutter_mvvm_template/states/article_list_view_state.dart';
 import 'package:flutter_mvvm_template/views/article_list_tile.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:flutter_mvvm_template/gen/l10n/l10n.dart';
 
-class ArticleListView extends ConsumerWidget {
+class ArticleListView extends HookConsumerWidget {
   const ArticleListView({Key? key}) : super(key: key);
 
   @override
@@ -13,9 +14,7 @@ class ArticleListView extends ConsumerWidget {
     final state = ref.watch(articleListViewModel);
 
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Qiita Articles'),
-        ),
+        appBar: AppBar(title: Text(L10n.of(context)!.hello)),
         body: RefreshIndicator(
             child: _buildListView(state),
             onRefresh: () => viewModel.fetchArticles()));

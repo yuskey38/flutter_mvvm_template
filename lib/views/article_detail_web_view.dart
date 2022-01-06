@@ -3,10 +3,10 @@ import 'package:flutter_mvvm_template/models/article.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class ArticleDetailWebView extends StatelessWidget {
-  final Article article;
-
   const ArticleDetailWebView({Key? key, required this.article})
       : super(key: key);
+
+  final Article article;
 
   @override
   Widget build(BuildContext context) {
