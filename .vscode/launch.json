@@ -6,7 +6,16 @@
             "request": "launch",
             "type": "dart",
             "args": [
+                "--dart-define=FLAVOR=local"
+            ]
+        },
+        {
+            "name": "localWithPreview",
+            "request": "launch",
+            "type": "dart",
+            "args": [
                 "--dart-define=FLAVOR=local",
+                "--dart-define=PREVIEW=true"
             ]
         },
         {
@@ -15,6 +24,15 @@
             "type": "dart",
             "args": [
                 "--dart-define=FLAVOR=dev"
+            ]
+        },
+        {
+            "name": "devWithPreview",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "--dart-define=FLAVOR=dev",
+                "--dart-define=PREVIEW=true"
             ]
         },
         {

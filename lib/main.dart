@@ -8,12 +8,13 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 // Project imports:
 import 'app.dart';
+import 'foundation/constants.dart';
 
 void main() {
   runApp(
     ProviderScope(
       child: DevicePreview(
-        enabled: !kReleaseMode,
+        enabled: !kReleaseMode && Constants.enablePreview,
         builder: (context) {
           return const MyApp();
         },

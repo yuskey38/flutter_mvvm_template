@@ -13,6 +13,8 @@ class Constants {
     required this.endpoint,
   });
 
+  static bool get enablePreview => const bool.fromEnvironment('PREVIEW');
+
   factory Constants.of() {
     final flavor = EnumToString.fromString(
           Flavor.values,
