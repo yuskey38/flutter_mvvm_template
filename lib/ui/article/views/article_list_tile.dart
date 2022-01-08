@@ -1,6 +1,9 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:flutter_mvvm_template/models/article.dart';
-import 'package:flutter_mvvm_template/views/article_detail_web_view.dart';
+
+// Project imports:
+import 'package:flutter_mvvm_template/data/model/article.dart';
+import 'package:flutter_mvvm_template/ui/article/views/article_detail_web_view.dart';
 
 class ArticleListTile extends StatelessWidget {
   const ArticleListTile({Key? key, required this.article}) : super(key: key);

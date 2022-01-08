@@ -1,17 +1,22 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:flutter_mvvm_template/view_models/article_list_view_model.dart';
-import 'package:flutter_mvvm_template/states/article_list_view_state.dart';
-import 'package:flutter_mvvm_template/views/article_list_tile.dart';
+
+// Package imports:
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:flutter_mvvm_template/gen/l10n/l10n.dart';
+
+// Project imports:
+import 'package:flutter_mvvm_template/l10n/l10n.dart';
+import 'package:flutter_mvvm_template/ui/article/states/article_list_view_state.dart';
+import 'package:flutter_mvvm_template/ui/article/view_models/article_list_view_model.dart';
+import 'package:flutter_mvvm_template/ui/article/views/article_list_tile.dart';
 
 class ArticleListView extends HookConsumerWidget {
   const ArticleListView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final viewModel = ref.watch(articleListViewModel.notifier);
-    final state = ref.watch(articleListViewModel);
+    final viewModel = ref.watch(articleListViewModelProvider.notifier);
+    final state = ref.watch(articleListViewModelProvider);
 
     return Scaffold(
         appBar: AppBar(title: Text(L10n.of(context)!.hello)),

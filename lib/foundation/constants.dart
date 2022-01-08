@@ -1,6 +1,9 @@
-import 'package:enum_to_string/enum_to_string.dart';
+// Flutter imports:
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:enum_to_string/enum_to_string.dart';
 
 enum Flavor { local, dev }
 
@@ -8,7 +11,6 @@ enum Flavor { local, dev }
 class Constants {
   const Constants._({
     required this.endpoint,
-    required this.boolTest,
   });
 
   factory Constants.of() {
@@ -29,20 +31,17 @@ class Constants {
 
   factory Constants._local() {
     return const Constants._(
-      endpoint: 'https://newsapi.org',
-      boolTest: true,
+      endpoint: "local",
     );
   }
 
   factory Constants._dev() {
     return const Constants._(
-      endpoint: 'https://newsapi.org',
-      boolTest: false,
+      endpoint: "dev",
     );
   }
 
   static late final Constants instance = Constants.of();
 
   final String endpoint;
-  final bool boolTest;
 }

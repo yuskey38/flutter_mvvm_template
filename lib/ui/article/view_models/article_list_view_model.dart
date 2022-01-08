@@ -1,9 +1,12 @@
-import 'package:flutter_mvvm_template/repositories/article_repository.dart';
-import 'package:flutter_mvvm_template/repositories/article_repository_impl.dart';
-import 'package:flutter_mvvm_template/states/article_list_view_state.dart';
+// Package imports:
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-final articleListViewModel = StateNotifierProvider.autoDispose<
+// Project imports:
+import 'package:flutter_mvvm_template/data/repository/article_repository.dart';
+import 'package:flutter_mvvm_template/data/repository/article_repository_impl.dart';
+import 'package:flutter_mvvm_template/ui/article/states/article_list_view_state.dart';
+
+final articleListViewModelProvider = StateNotifierProvider.autoDispose<
     ArticleListViewModel, ArticleListViewState>((ref) {
   return ArticleListViewModel(ArticleRepositoryImpl());
 });

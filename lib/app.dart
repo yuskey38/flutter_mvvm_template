@@ -1,7 +1,12 @@
-import 'package:device_preview/device_preview.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:flutter_mvvm_template/views/article_list_view.dart';
-import 'package:flutter_mvvm_template/gen/l10n/l10n.dart';
+
+// Package imports:
+import 'package:device_preview/device_preview.dart';
+
+// Project imports:
+import 'package:flutter_mvvm_template/l10n/l10n.dart';
+import 'package:flutter_mvvm_template/ui/article/views/article_list_view.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);

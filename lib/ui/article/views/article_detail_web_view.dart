@@ -1,6 +1,11 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:flutter_mvvm_template/models/article.dart';
+
+// Package imports:
 import 'package:webview_flutter/webview_flutter.dart';
+
+// Project imports:
+import 'package:flutter_mvvm_template/data/model/article.dart';
 
 class ArticleDetailWebView extends StatelessWidget {
   const ArticleDetailWebView({Key? key, required this.article})

@@ -1,5 +1,8 @@
+// Package imports:
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter_mvvm_template/models/article.dart';
+
+// Project imports:
+import 'package:flutter_mvvm_template/data/model/article.dart';
 
 part 'article_list_view_state.freezed.dart';
 

@@ -1,5 +1,8 @@
-import 'package:flutter_mvvm_template/models/user.dart';
+// Package imports:
 import 'package:json_annotation/json_annotation.dart';
+
+// Project imports:
+import 'package:flutter_mvvm_template/data/model/user.dart';
 
 part 'article.g.dart';
 

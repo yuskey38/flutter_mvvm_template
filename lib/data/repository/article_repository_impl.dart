@@ -1,8 +1,11 @@
+// Package imports:
 import 'package:dio/dio.dart';
-import 'package:flutter_mvvm_template/apis/qiita_api_client.dart';
-import 'package:flutter_mvvm_template/models/article.dart';
-import 'package:flutter_mvvm_template/repositories/article_repository.dart';
-import 'package:flutter_mvvm_template/models/response/result.dart';
+
+// Project imports:
+import 'package:flutter_mvvm_template/data/api/qiita_api_client.dart';
+import 'package:flutter_mvvm_template/data/model/article.dart';
+import 'package:flutter_mvvm_template/data/model/response/result.dart';
+import 'package:flutter_mvvm_template/data/repository/article_repository.dart';
 
 class ArticleRepositoryImpl with ArticleRepository {
   final QiitaApiClient _client;

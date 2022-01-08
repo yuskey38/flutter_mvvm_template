@@ -1,6 +1,9 @@
+// Package imports:
 import 'package:dio/dio.dart';
-import 'package:flutter_mvvm_template/models/article.dart';
 import 'package:retrofit/http.dart';
+
+// Project imports:
+import 'package:flutter_mvvm_template/data/model/article.dart';
 
 part 'qiita_api_client.g.dart';
 
