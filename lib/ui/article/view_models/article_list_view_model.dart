@@ -21,6 +21,9 @@ class ArticleListViewModel extends StateNotifier<ArticleListViewState> {
   Future<void> fetchArticles() async {
     await repository.fetchArticles().then((result) {
       result.when(success: (articles) {
+        if (!mounted) {
+          return;
+        }
         state = state.copyWith(articles: articles);
       }, failure: (error) {
         // ignore: avoid_print

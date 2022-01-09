@@ -22,10 +22,7 @@ class ArticleListTile extends StatelessWidget {
       ),
       title: Text(article.title),
       onTap: () {
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => ArticleDetailWebView(article: article)));
+        Navigator.push(context, ArticleDetailWebView.route(article: article));
       },
     );
   }
