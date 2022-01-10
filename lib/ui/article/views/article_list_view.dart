@@ -10,6 +10,7 @@ import 'package:flutter_mvvm_template/ui/article/view_models/article_list_view_m
 import 'package:flutter_mvvm_template/ui/article/views/article_list_tile.dart';
 import 'package:flutter_mvvm_template/ui/beginner/view/begginer_view.dart';
 import 'package:flutter_mvvm_template/ui/hook/use_l10n.dart';
+import 'package:flutter_mvvm_template/ui/loading_state_view_model.dart';
 
 class ArticleListView extends HookConsumerWidget {
   const ArticleListView({Key? key}) : super(key: key);
@@ -21,18 +22,19 @@ class ArticleListView extends HookConsumerWidget {
     final l10n = useL10n();
 
     return Scaffold(
-        appBar: AppBar(
-          title: Text(l10n.hello),
-          leading: IconButton(
-            icon: const Icon(Icons.star_rounded),
-            onPressed: () {
-              Navigator.pushReplacement(context, BeginnerView.route());
-            },
-          ),
+      appBar: AppBar(
+        title: Text(l10n.hello),
+        leading: IconButton(
+          icon: const Icon(Icons.star_rounded),
+          onPressed: () {
+            Navigator.pushReplacement(context, BeginnerView.route());
+          },
         ),
-        body: RefreshIndicator(
-            child: _buildListView(state),
-            onRefresh: () => viewModel.fetchArticles()));
+      ),
+      body: RefreshIndicator(
+          child: _buildListView(state),
+          onRefresh: () => viewModel.fetchArticles()),
+    );
   }
 
   Widget _buildListView(ArticleListViewState state) {

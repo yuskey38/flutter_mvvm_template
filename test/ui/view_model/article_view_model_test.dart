@@ -6,8 +6,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:flutter_mvvm_template/data/model/article.dart';
 import 'package:flutter_mvvm_template/data/repository/article_repository_impl.dart';
 import 'package:flutter_mvvm_template/ui/article/view_models/article_list_view_model.dart';
-import 'helper/article_factory.dart';
-import 'mock/repository/mock_article_repository.dart';
+import '../../helper/article_factory.dart';
+import '../../mock/repository/mock_article_repository.dart';
 
 void main() {
   test('ArticleListViewModelTest', () async {
