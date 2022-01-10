@@ -8,18 +8,20 @@ import 'package:flutter_mvvm_template/ui/article/states/article_list_view_state.
 
 final articleListViewModelProvider = StateNotifierProvider.autoDispose<
     ArticleListViewModel, ArticleListViewState>((ref) {
-  return ArticleListViewModel(ArticleRepositoryImpl());
+  return ArticleListViewModel(ref.read);
 });
 
 class ArticleListViewModel extends StateNotifier<ArticleListViewState> {
-  final ArticleRepository repository;
-
-  ArticleListViewModel(this.repository) : super(const ArticleListViewState()) {
+  ArticleListViewModel(this._reader) : super(const ArticleListViewState()) {
     fetchArticles();
   }
 
+  final Reader _reader;
+
+  late final ArticleRepository _repository = _reader(articleRepositoryProvider);
+
   Future<void> fetchArticles() async {
-    await repository.fetchArticles().then((result) {
+    await _repository.fetchArticles().then((result) {
       result.when(success: (articles) {
         if (!mounted) {
           return;
