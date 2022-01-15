@@ -24,18 +24,15 @@ class ArticleListViewModel extends StateNotifier<ArticleListViewState> {
       _reader(loadingStateViewModelProvider.notifier);
 
   Future<void> fetchArticles() async {
-    loading.toLoading();
     await _repository.fetchArticles().then((result) {
       result.when(success: (articles) {
         if (!mounted) {
           return;
         }
         state = state.copyWith(articles: articles);
-        loading.toIdle();
       }, failure: (error) {
         // ignore: avoid_print
         print(error.message);
-        loading.toIdle();
       });
     });
   }

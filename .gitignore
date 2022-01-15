@@ -48,5 +48,8 @@ app.*.map.json
 # l10n file
 **/l10n/*.dart
 
+# gen file
+**/gen/*.dart
+
 # iOS 
 **/ios/Flutter/DartDefines.xcconfig
